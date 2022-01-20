@@ -1,4 +1,6 @@
+import { ColorService } from './../../services/color.service';
 import { Component, OnInit } from '@angular/core';
+import { ColorListModel } from 'src/app/models/colorListModel';
 
 @Component({
   selector: 'app-color',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
 
-  constructor() { }
+  colors: ColorListModel[] = [];
+  dataLoaded: boolean = false;
+
+  constructor(private coloService: ColorService) { }
 
   ngOnInit(): void {
+    this.getAll();
+  }
+
+  getAll(){
+    this.coloService.geColors().subscribe(response=>{
+      this.dataLoaded = false;
+      if (response.success)
+        this.colors = response.data;
+      
+      this.dataLoaded = true;
+    })
   }
 
 }
