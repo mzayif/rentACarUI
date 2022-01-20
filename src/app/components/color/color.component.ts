@@ -1,6 +1,6 @@
 import { ColorService } from './../../services/color.service';
 import { Component, OnInit } from '@angular/core';
-import { ColorListModel } from 'src/app/models/colorListModel';
+import { ColorListModel } from 'src/app/models/colors/colorListModel';
 
 @Component({
   selector: 'app-color',
@@ -19,10 +19,12 @@ export class ColorComponent implements OnInit {
   }
 
   getAll(){
-    this.coloService.geColors().subscribe(response=>{
+    this.coloService.getAll().subscribe(response=>{
       this.dataLoaded = false;
-      if (response.success)
+      if (response.success) {
         this.colors = response.data;
+        console.warn(response.data);
+      }
       
       this.dataLoaded = true;
     })
