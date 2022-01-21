@@ -12,10 +12,17 @@ import { SelectItem } from 'primeng/api';
 export class CarComponent implements OnInit {
 
   cars: CarListModel[] = [];
+
+  sortOptions: SelectItem[] = [];
+  sortOrder: number = 0;
+  sortField: string = "";
+  sortKey: string = "";
+  
   dataLoaded: boolean = false;
   rating: number = 2
   pageNo: number = 0
   pageSize: number = 0
+
   constructor(private carService: CarService) { }
 
   ngOnInit(): void {
@@ -39,4 +46,16 @@ export class CarComponent implements OnInit {
   }
 
 
+  onSortChange(event:any) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+        this.sortOrder = -1;
+        this.sortField = value.substring(1, value.length);
+    }
+    else {
+        this.sortOrder = 1;
+        this.sortField = value;
+    }
+}
 }

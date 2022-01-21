@@ -34,4 +34,5 @@ export class CarDteailComponent implements OnInit {
     })
   }
 
+  
 }

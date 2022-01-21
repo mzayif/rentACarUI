@@ -37,7 +37,7 @@ export class CarService {
 
   getCarsPage(pageNo: number, pageSize: number): Observable<ListResponseModel<CarListModel>> {
     return this.httpClient.get<ListResponseModel<CarListModel>>(
-      this.apiUrl + "/getAllByPage?pageNo=" + pageNo + "&pageSize=" + Number
+      this.apiUrl + "/getAllByPage?pageNo=" + pageNo + "&pageSize=" + pageSize
     )
   }
 

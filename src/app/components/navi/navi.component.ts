@@ -35,7 +35,43 @@ export class NaviComponent implements OnInit {
             label: 'List',
             // icon: 'pi pi-fw pi-trash',
             routerLink:"/car"
-          }
+          },
+          {
+            label: 'Maintenance',
+            icon:'pi pi-fw pi-plus',
+            items:[
+            {
+                label:'Send Maintenance',
+                icon:'pi pi-fw pi-bookmark'
+            },
+            {
+                label:'Return Maintenance',
+                icon:'pi pi-fw pi-video'
+            },
+            {
+                label:'Car Maintenance History',
+                icon:'pi pi-fw pi-video'
+            },
+
+            ]
+          },
+          {
+            label: 'Damages',
+            icon: 'pi pi-fw pi-plus',
+            items: [
+              {
+                label: 'New Damage',
+                routerLink: "/car/damage/add",
+                icon: 'pi pi-fw pi-bookmark'
+              },
+              {
+                routerLink: "/car/damages",
+                label: 'Damage List',
+                icon: 'pi pi-fw pi-video'
+              }
+            ]
+          },
+
         ]
       },
       {
@@ -43,11 +79,11 @@ export class NaviComponent implements OnInit {
         icon: 'pi pi-fw pi-pencil',
         items: [
           {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left'
+            label: 'Rent New Car',
+            // icon: 'pi pi-fw pi-align-left'
           },
           {
-            label: 'Right',
+            label: 'Payment rent',
             icon: 'pi pi-fw pi-align-right'
           },
           {
@@ -62,39 +98,42 @@ export class NaviComponent implements OnInit {
         ]
       },
       {
-        label: 'Users',
+        label: 'Customers',
         icon: 'pi pi-fw pi-user',
         items: [
           {
-            label: 'New',
+            label: 'New Individual Customers',
             icon: 'pi pi-fw pi-user-plus',
-
           },
           {
-            label: 'Delete',
-            icon: 'pi pi-fw pi-user-minus',
-
+            label: 'New Corporate Customers',
+            icon: 'pi pi-fw pi-user-plus',
           },
           {
-            label: 'Search',
-            icon: 'pi pi-fw pi-users',
+            label: 'Customer List',
+            icon: 'pi pi-fw pi-user-plus',
+          },
+          {
+            label: 'Credit Card List',
+            icon: 'pi pi-fw pi-user-plus',
+          },
+          {
+            label: 'Invoices',
+            icon: 'pi pi-fw pi-plus',
             items: [
               {
-                label: 'Filter',
-                icon: 'pi pi-fw pi-filter',
-                items: [
-                  {
-                    label: 'Print',
-                    icon: 'pi pi-fw pi-print'
-                  }
-                ]
+                label: 'New Invoice',
+                routerLink: "/invoice/add",
+                icon: 'pi pi-fw pi-bookmark'
               },
               {
-                icon: 'pi pi-fw pi-bars',
-                label: 'List'
+                routerLink: "/invoices",
+                label: 'Invoice List',
+                icon: 'pi pi-fw pi-video'
               }
             ]
-          }
+          },
+          
         ]
       },
       {
@@ -130,6 +169,57 @@ export class NaviComponent implements OnInit {
               {
                 label: 'list',
                 routerLink:"/colors",
+                // icon: 'pi pi-fw pi-calendar-minus'
+              },
+
+            ]
+          },
+          {
+            label: 'Car Segments',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'new',
+                routerLink:"/car-segment/add",
+                // icon: 'pi pi-fw pi-calendar-plus'
+              },
+              {
+                label: 'list',
+                routerLink:"/car-segments",
+                // icon: 'pi pi-fw pi-calendar-minus'
+              },
+
+            ]
+          }, 
+          {
+            label: 'Cities',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'new',
+                routerLink:"/city/add",
+                // icon: 'pi pi-fw pi-calendar-plus'
+              },
+              {
+                label: 'list',
+                routerLink:"/cities",
+                // icon: 'pi pi-fw pi-calendar-minus'
+              },
+
+            ]
+          },
+          {
+            label: 'Additional Services',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'new',
+                routerLink:"/additional-service/add",
+                // icon: 'pi pi-fw pi-calendar-plus'
+              },
+              {
+                label: 'list',
+                routerLink:"/additional-services",
                 // icon: 'pi pi-fw pi-calendar-minus'
               },
 

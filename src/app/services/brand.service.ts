@@ -14,19 +14,21 @@ export class BrandService {
   apiUrl: string = "http://localhost:8080/api/brands/";
   constructor(private httpClient: HttpClient) { }
 
-  getAll(): Observable<ListResponseModel<BrandListModel>> {
-    return this.httpClient.get<ListResponseModel<BrandListModel>>(this.apiUrl + 'getAll');
+
+  add(data: BrandCreateModel): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', data);
   }
 
-  add(brand: BrandCreateModel): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', brand);
-  }
-
-  update(brand: BrandUpdateModel): Observable<ResponseModel> {
-    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', brand);
+  update(data: BrandUpdateModel): Observable<ResponseModel> {
+    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', data);
   }
 
   delete(id:number): Observable<ResponseModel> {
     return this.httpClient.delete<ResponseModel>(this.apiUrl + 'delete' + `?id=${id}`);
+  }
+
+
+  getAll(): Observable<ListResponseModel<BrandListModel>> {
+    return this.httpClient.get<ListResponseModel<BrandListModel>>(this.apiUrl + 'getAll');
   }
 }

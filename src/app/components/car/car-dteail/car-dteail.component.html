@@ -91,13 +91,22 @@
           <p class="product-description">
             <strong>Description : </strong> {{ car.description }}
           </p>
-          <h4 class="price">
+          <h4 class="price mb-5">
             current price: <span>${{ car.dailyPrice }}</span>
           </h4>
-          <div class="action">
-            <button class="add-to-cart btn btn-default" type="button">
-              Rental
-            </button>
+          <div class="row mt-5 pt-5">
+            <div class="col-3">
+              <a style="text-decoration: none" [routerLink]="['/car/rental/add/', car.id]">
+                <p-button label="Rental"></p-button>  
+              </a>
+              
+            </div>
+            <div class="col-5 ">
+              <p-button label="Send Maintenance"></p-button>
+            </div>
+            <div class="col-4">
+              <p-button label="Add Damage"></p-button>
+            </div>
           </div>
         </div>
       </div>
