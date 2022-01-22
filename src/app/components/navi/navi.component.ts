@@ -38,36 +38,36 @@ export class NaviComponent implements OnInit {
           },
           {
             label: 'Maintenance',
-            icon:'pi pi-fw pi-plus',
+            // icon:'pi pi-fw pi-plus',
             items:[
             {
                 label:'Send Maintenance',
-                icon:'pi pi-fw pi-bookmark'
+                // icon:'pi pi-fw pi-bookmark'
             },
             {
                 label:'Return Maintenance',
-                icon:'pi pi-fw pi-video'
+                // icon:'pi pi-fw pi-video'
             },
             {
                 label:'Car Maintenance History',
-                icon:'pi pi-fw pi-video'
+                // icon:'pi pi-fw pi-video'
             },
 
             ]
           },
           {
             label: 'Damages',
-            icon: 'pi pi-fw pi-plus',
+            // icon: 'pi pi-fw pi-plus',
             items: [
               {
                 label: 'New Damage',
                 routerLink: "/car/damage/add",
-                icon: 'pi pi-fw pi-bookmark'
+                // icon: 'pi pi-fw pi-bookmark'
               },
               {
                 routerLink: "/car/damages",
                 label: 'Damage List',
-                icon: 'pi pi-fw pi-video'
+                // icon: 'pi pi-fw pi-video'
               }
             ]
           },
