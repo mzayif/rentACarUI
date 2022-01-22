@@ -22,7 +22,21 @@ import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { RippleModule } from 'primeng/ripple';
 import { MenubarModule } from 'primeng/menubar';
-
+import { TableModule } from 'primeng/table';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 import { BrandService } from './services/brand.service';
 import { CarService } from './services/car.service';
@@ -119,6 +133,20 @@ import { RentalListComponent } from './components/rental/rental-list/rental-list
     TabViewModule,
     TabMenuModule,
     DropdownModule,
+    TableModule,
+    ConfirmDialogModule,
+    ToastModule,
+    CalendarModule,
+    SliderModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    ProgressBarModule,
+    FileUploadModule,
+    ToolbarModule,
+    RadioButtonModule,
+    InputNumberModule,
+    InputTextareaModule,
+
     DialogModule,
     RippleModule,
     MenubarModule,
@@ -128,7 +156,7 @@ import { RentalListComponent } from './components/rental/rental-list/rental-list
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [ColorService, CarService, BrandService],
+  providers: [ColorService, CarService, BrandService, MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

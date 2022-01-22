@@ -1,4 +1,4 @@
 export interface BrandListModel {
-    id?: number,
+    id: number,
     name?: string
 }
