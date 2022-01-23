@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="left">
-            <h3>Renk Yönetimi</h3>
+            <h3>Şehir Tanım Yönetimi</h3>
         </ng-template>
 
         <ng-template pTemplate="right">
@@ -14,7 +14,7 @@
         <ng-template pTemplate="header">
             <tr>
                 <!-- <th>Id</th> -->
-                <th>Renk Adı</th>
+                <th>Şehir Adı</th>
                 <th></th>
             </tr>
         </ng-template>
@@ -32,12 +32,17 @@
 </div>
 
 
-<p-dialog [(visible)]="dialog" [style]="{width: '350px'}" header="Renk Detayı" [modal]="true" styleClass="p-fluid">
+<p-dialog [(visible)]="dialog" [style]="{width: '350px'}" header="Şehir Tanım Detayı" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
-        <div class="p-field">
-            <label for="name">Renk Adı</label>
+        <div class="p-field pb-2">
+            <label for="name">Şehir Adı</label>
             <input type="text" pInputText id="name" [(ngModel)]="selectRecord.name" required autofocus />
-            <small class="p-invalid" *ngIf="!selectRecord.name">Renk Adı zorunludur</small>
+            <small class="p-invalid" *ngIf="submitted && !selectRecord.name">Şehir Adı zorunludur</small>
+        </div>
+        <div class="p-field">
+            <label for="name">Şehir Plaka No</label>
+            <input type="text" pInputText id="cityCode" [(ngModel)]="selectRecord.cityCode" required autofocus />
+            <small class="p-invalid" *ngIf="submitted && !selectRecord.name">Şehir Plaka No zorunludur</small>
         </div>
     </ng-template>
     

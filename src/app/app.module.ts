@@ -47,9 +47,7 @@ import { CarComponent } from './components/car/car.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarDteailComponent } from './components/car/car-dteail/car-dteail.component';
-import { ColorDetailComponent } from './components/color/color-detail/color-detail/color-detail.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
-import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { CarAddComponent } from './components/car/car-add/car-add.component';
 import { CarSegmentComponent } from './components/carSegment/car-segment/car-segment.component';
 import { CarSegmentAddComponent } from './components/carSegment/car-segment-add/car-segment-add.component';
@@ -61,9 +59,6 @@ import { CarDamageAddComponent } from './components/carDamage/car-damage-add/car
 import { CarDamageDetailComponent } from './components/carDamage/car-damage-detail/car-damage-detail.component';
 import { CarDamageListComponent } from './components/carDamage/car-damage-list/car-damage-list.component';
 import { BrandDetailComponent } from './components/brand/brand-detail/brand-detail.component';
-import { CityAddComponent } from './components/city/city-add/city-add.component';
-import { CityDetailComponent } from './components/city/city-detail/city-detail.component';
-import { CityListComponent } from './components/city/city-list/city-list.component';
 import { CreditCardAddComponent } from './components/CreditCard/credit-card-add/credit-card-add.component';
 import { CreditCardDetailComponent } from './components/CreditCard/credit-card-detail/credit-card-detail.component';
 import { CreditCardListComponent } from './components/CreditCard/credit-card-list/credit-card-list.component';
@@ -76,6 +71,7 @@ import { InvoiceListComponent } from './components/invoice/invoice-list/invoice-
 import { RentalAddComponent } from './components/rental/rental-add/rental-add.component';
 import { RentalDetailComponent } from './components/rental/rental-detail/rental-detail.component';
 import { RentalListComponent } from './components/rental/rental-list/rental-list.component';
+import { CityComponent } from './components/city/city.component';
 
 
 
@@ -87,10 +83,8 @@ import { RentalListComponent } from './components/rental/rental-list/rental-list
     NaviComponent,
     HomeComponent,
     CarDteailComponent,
-    ColorDetailComponent,
     BrandAddComponent,
     BrandDetailComponent,
-    ColorAddComponent,
     CarAddComponent,
     CarSegmentComponent,
     CarSegmentAddComponent,
@@ -101,9 +95,6 @@ import { RentalListComponent } from './components/rental/rental-list/rental-list
     CarDamageAddComponent,
     CarDamageDetailComponent,
     CarDamageListComponent,
-    CityAddComponent,
-    CityDetailComponent,
-    CityListComponent,
     CreditCardAddComponent,
     CreditCardDetailComponent,
     CreditCardListComponent,
@@ -115,7 +106,8 @@ import { RentalListComponent } from './components/rental/rental-list/rental-list
     InvoiceListComponent,
     RentalAddComponent,
     RentalDetailComponent,
-    RentalListComponent
+    RentalListComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,

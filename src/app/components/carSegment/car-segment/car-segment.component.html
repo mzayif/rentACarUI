@@ -1,7 +1,53 @@
-<div>
-    <ul>
-        <li *ngFor="let segment of segments ">
-            {{segment.segmentName}}
-        </li>
-    </ul>
+<p-toast></p-toast>
+
+<div class="container mt-5">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <h3>Araç Sınıf Yönetimi</h3>
+        </ng-template>
+
+        <ng-template pTemplate="right">
+            <button pButton pRipple label="Ekle" icon="pi pi-plus" class="p-button-success p-mr-2"
+                (click)="openNew()"></button>
+        </ng-template>
+    </p-toolbar>
+    <p-table [value]="segments" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>Araç Sınıf Adı</th>
+                <th>Araç Sınıf Tipi</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <!-- <td>{{product.id}}</td> -->
+                <td>{{product.segmentName}}</td>
+                <td>{{product.carType}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"  (click)="edit(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(product)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 </div>
+
+
+<p-dialog [(visible)]="dialog" [style]="{width: '350px'}" header="Araç Sınıfı Detayı" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="name">Araç Sınıfı Adı</label>
+            <input type="text" pInputText id="name" [(ngModel)]="selectRecord.segmentName" required autofocus />
+            <small class="p-invalid" *ngIf="!selectRecord.segmentName">Araç Sınıfı Adı zorunludur</small>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-text" (click)="saveBrand()"></button>
+    </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

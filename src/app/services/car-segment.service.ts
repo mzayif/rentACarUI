@@ -1,4 +1,3 @@
-import { CarUpdateModel } from './../models/cars/carUpdateModel';
 import { ResponseModel } from './../models/responseModel';
 import { CarSegmentCreateModel } from './../models/carSegments/segmentCreateModel';
 import { Observable } from 'rxjs';
@@ -6,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from '../models/listResponseModel';
 import { CarSegmentListModel } from '../models/carSegments/segmentListModel';
+import { CarSegmentUpdateModel } from '../models/carSegments/segmentUpdateModel';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class CarSegmentService {
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', brand);
   }
 
-  update(brand: CarUpdateModel): Observable<ResponseModel> {
+  update(brand: CarSegmentUpdateModel): Observable<ResponseModel> {
     return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', brand);
   }
 

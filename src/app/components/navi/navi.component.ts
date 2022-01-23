@@ -141,72 +141,76 @@ export class NaviComponent implements OnInit {
         // icon: 'pi pi-fw pi-calendar',
         items: [
           {
+            routerLink: "/brands",
             label: 'Brands',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'new',
-                routerLink:"/brand/add",
-                // icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'list',
-                routerLink:"/brands",
-                // icon: 'pi pi-fw pi-calendar-minus'
-              },
+            // icon: 'pi pi-fw pi-pencil',
+            // items: [
+            //   {
+            //     label: 'new',
+            //     routerLink:"/brand/add",
+            //     // icon: 'pi pi-fw pi-calendar-plus'
+            //   },
+            //   {
+            //     label: 'list',
+            //     routerLink:"/brands",
+            //     // icon: 'pi pi-fw pi-calendar-minus'
+            //   },
 
-            ]
+            // ]
           },
           {
             label: 'Colors',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'new',
-                routerLink:"/color/add",
-                // icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'list',
-                routerLink:"/colors",
-                // icon: 'pi pi-fw pi-calendar-minus'
-              },
+            routerLink: "/colors",
+            // icon: 'pi pi-fw pi-pencil',
+            // items: [
+            //   {
+            //     label: 'new',
+            //     routerLink: "/color/add",
+            //     // icon: 'pi pi-fw pi-calendar-plus'
+            //   },
+            //   {
+            //     label: 'list',
+            //     routerLink: "/colors",
+            //     // icon: 'pi pi-fw pi-calendar-minus'
+            //   },
 
-            ]
+            // ]
           },
           {
             label: 'Car Segments',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'new',
-                routerLink:"/car-segment/add",
-                // icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'list',
-                routerLink:"/car-segments",
-                // icon: 'pi pi-fw pi-calendar-minus'
-              },
+            routerLink: "/car-segments",
+            //     icon: 'pi pi-fw pi-pencil',
+            // items: [
+            //   {
+            //     label: 'new',
+            //     routerLink:"/car-segment/add",
+            //     // icon: 'pi pi-fw pi-calendar-plus'
+            //   },
+            //   {
+            //     label: 'list',
+            //     routerLink:"/car-segments",
+            //     // icon: 'pi pi-fw pi-calendar-minus'
+            //   },
 
-            ]
+            // ]
           }, 
           {
             label: 'Cities',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'new',
-                routerLink:"/city/add",
-                // icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'list',
-                routerLink:"/cities",
-                // icon: 'pi pi-fw pi-calendar-minus'
-              },
+            routerLink: "/cities",
+            //     icon: 'pi pi-fw pi-pencil',
+            // items: [
+            //   {
+            //     label: 'new',
+            //     routerLink:"/city/add",
+            //     // icon: 'pi pi-fw pi-calendar-plus'
+            //   },
+            //   {
+            //     label: 'list',
+            //     routerLink:"/cities",
+            //     // icon: 'pi pi-fw pi-calendar-minus'
+            //   },
 
-            ]
+            // ]
           },
           {
             label: 'Additional Services',
