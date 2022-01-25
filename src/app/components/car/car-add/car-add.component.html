@@ -1,29 +1,9 @@
 <div class="container mt-5">
         <div class="card pb-5">
-            <div class="card-header">
+            <div *ngIf="carId==0" class="card-header">
                 <h5 class="title">Araç ekle</h5>
             </div>
-            <div class="card-body">
-                <div class="p-fluid mb-4">
-                    <!-- <label for="brandId">Marka</label> -->
-                    <p-dropdown [options]="brands" [(ngModel)]="selectedBrand" placeholder="Marka" optionLabel="name"
-                        [showClear]="true">
-                    </p-dropdown>
-                </div>
-
-                <div class="p-fluid mb-4">
-                    <!-- <label for="colorId">Renk</label> -->
-                    <p-dropdown [options]="colors" [(ngModel)]="selectedColor" placeholder="Renk" optionLabel="name"
-                        [showClear]="true">
-                    </p-dropdown>
-                </div>
-
-                <div class="p-fluid mb-4">
-                    <!-- <label for="carSegmentTypeId">Araç Segmenti</label> -->
-                    <p-dropdown [options]="segments" [(ngModel)]="selectedSegment" placeholder="Araç Segmenti"
-                        optionLabel="segmentName" [showClear]="true">
-                    </p-dropdown>
-                </div>
+            <div class="card-body">               
 
                 <form [formGroup]="carAddForm">
                     <!-- <div class="mb-3">
@@ -40,9 +20,33 @@
                         <label for="float-input-invalid">Model Yılı</label>
                     </span> -->
                     <div class="p-fluid mb-4">
+                        <!-- <label for="brandId">Marka</label> -->
+                        <p-dropdown [options]="brands" id="brandId" formControlName="brandId" placeholder="Marka"
+                            optionLabel="name" optionValue="id" [showClear]="true">
+                        </p-dropdown>
+                    </div>
+                    
+                    <div class="p-fluid mb-4">
+                        <!-- <label for="colorId">Renk</label> -->
+                        <p-dropdown [options]="colors" id="colorId" formControlName="colorId" placeholder="Renk"
+                            optionLabel="name" optionValue="id" [showClear]="true">
+                        </p-dropdown>
+                    </div>
+                    <div class="p-fluid mb-4">
+                        <!-- <label for="carSegmentTypeId">Araç Segmenti</label> -->
+                        <p-dropdown [options]="segments" id="carSegmentTypeId" formControlName="carSegmentTypeId"
+                            placeholder="Araç Segmenti" optionLabel="segmentName" optionValue="id" [showClear]="true">
+                        </p-dropdown>
+                    </div>
+                    <div class="p-fluid mb-4">
                         <span class="p-float-label">
-                            <input id="float-input" type="number" pInputText pInputText id="modelYear"
-                                formControlName="modelYear">
+                            <input id="float-input" type="text" pInputText pInputText id="carPlate" formControlName="carPlate">
+                            <label for="float-input">Araç Plakası</label>
+                        </span>
+                    </div>
+                    <div class="p-fluid mb-4">
+                        <span class="p-float-label">
+                            <input id="float-input" type="number" pInputText pInputText id="modelYear" formControlName="modelYear">
                             <label for="float-input">Model Yılı</label>
                         </span>
                     </div>
@@ -90,7 +94,7 @@
                 </form>
             </div>
             <div class="text-center">
-                <p-button label="Ekle" (click)="add()"></p-button>
+                <p-button label="Ekle" (click)="save()"></p-button>
             </div>
         </div>
 </div>

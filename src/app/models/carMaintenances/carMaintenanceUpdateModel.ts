@@ -1,6 +1,6 @@
 export interface CarMaintenanceUpdateModel {
     id: number,
-    sendMaintenanceDate: Date,
-    returnMaintenanceDate: Date,
-    carId: number
+    sendMaintenanceDate?: any,
+    returnMaintenanceDate?: any,
+    carId?: number
 }

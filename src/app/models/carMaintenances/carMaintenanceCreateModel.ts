@@ -1,4 +1,4 @@
 export interface CarMaintenanceCreateModel {
-    sendMaintenanceDate: Date,
-    carId: number
+    sendMaintenanceDate?: any,
+    carId?: number
 }

@@ -16,12 +16,15 @@ export class CarMaintenanceService {
   constructor(private httpClient: HttpClient) { }
 
 
-  add(brand: CarMaintenanceCreateModel): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', brand);
+  add(maintenance: CarMaintenanceCreateModel): Observable<ResponseModel> {
+    console.log(maintenance);
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', maintenance);
   }
 
-  update(brand: CarMaintenanceUpdateModel): Observable<ResponseModel> {
-    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', brand);
+  update(maintenance: CarMaintenanceUpdateModel): Observable<ResponseModel> {
+
+    console.log(maintenance);
+    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', maintenance);
   }
 
   delete(id:number): Observable<ResponseModel> {

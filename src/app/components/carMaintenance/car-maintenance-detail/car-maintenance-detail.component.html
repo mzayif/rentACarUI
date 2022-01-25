@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="card">
+
+        <div class="card-body" [style]="{width: '500px', height:'600px' }">               
+            <form [formGroup]="maintenanceForm">
+                                            
+                <div class="field col-12 md:col-4">
+                    <label for="float-input">Bakıma Gönderim Tarihi</label>
+                    <p-calendar id="sendMaintenanceDate" formControlName="sendMaintenanceDate" [showIcon]="true" inputId="icon"></p-calendar>
+                </div>
+
+                <div class="field col-12 md:col-4">
+                    <label for="icon">Bakımadan Dönüş Tarihi</label>
+                    <p-calendar id="returnMaintenanceDate" formControlName="returnMaintenanceDate" [showIcon]="true" inputId="icon"></p-calendar>
+                </div>
+            </form>
+        </div>
+        <div class="text-center">
+            <p-button label="Ekle" (click)="save()"></p-button>
+        </div>
+    </div>
+</div>

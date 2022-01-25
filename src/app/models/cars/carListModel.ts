@@ -3,5 +3,9 @@ export interface CarListModel {
     modelYear: number,
     description: string,
     kilometer: number,
-    dailyPrice: number
+    dailyPrice: number,
+    carPlate: string,
+    brandName: string,
+    colorName: string,
+    segmentName: string,
 }

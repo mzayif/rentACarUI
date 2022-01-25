@@ -8,5 +8,6 @@ export interface CarUpdateModel {
     minYear: number,
     carSegmentTypeId: number,
     brandId: number,
-    colorId: number
+    colorId: number,
+    carPlate: string
 }

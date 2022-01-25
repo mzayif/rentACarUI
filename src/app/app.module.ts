@@ -51,9 +51,6 @@ import { BrandAddComponent } from './components/brand/brand-add/brand-add.compon
 import { CarAddComponent } from './components/car/car-add/car-add.component';
 import { CarSegmentComponent } from './components/carSegment/car-segment/car-segment.component';
 import { CarSegmentAddComponent } from './components/carSegment/car-segment-add/car-segment-add.component';
-import { AdditionalServiceAddComponent } from './components/additionalServices/additional-service-add/additional-service-add.component';
-import { AdditionalServiceDetailComponent } from './components/additionalServices/additional-service-detail/additional-service-detail.component';
-import { AdditionalServiceListComponent } from './components/additionalServices/additional-service-list/additional-service-list.component';
 import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
 import { CarDamageAddComponent } from './components/carDamage/car-damage-add/car-damage-add.component';
 import { CarDamageDetailComponent } from './components/carDamage/car-damage-detail/car-damage-detail.component';
@@ -72,6 +69,9 @@ import { RentalAddComponent } from './components/rental/rental-add/rental-add.co
 import { RentalDetailComponent } from './components/rental/rental-detail/rental-detail.component';
 import { RentalListComponent } from './components/rental/rental-list/rental-list.component';
 import { CityComponent } from './components/city/city.component';
+import { AdditionalServiceComponent } from './components/additionalServices/additional-service/additional-service.component';
+import { CarMaintenanceDetailComponent } from './components/carMaintenance/car-maintenance-detail/car-maintenance-detail.component';
+import { CarMaintenanceListComponent } from './components/carMaintenance/car-maintenance-list/car-maintenance-list.component';
 
 
 
@@ -88,9 +88,6 @@ import { CityComponent } from './components/city/city.component';
     CarAddComponent,
     CarSegmentComponent,
     CarSegmentAddComponent,
-    AdditionalServiceAddComponent,
-    AdditionalServiceDetailComponent,
-    AdditionalServiceListComponent,
     BrandListComponent,
     CarDamageAddComponent,
     CarDamageDetailComponent,
@@ -107,7 +104,10 @@ import { CityComponent } from './components/city/city.component';
     RentalAddComponent,
     RentalDetailComponent,
     RentalListComponent,
-    CityComponent
+    CityComponent,
+    AdditionalServiceComponent,
+    CarMaintenanceDetailComponent,
+    CarMaintenanceListComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,6 @@ export interface CarCreateModel {
     kilometer: number,
     carSegmentTypeId: number,
     brandId: number,
-    colorId: number
-    
+    colorId: number,
+    carPlate: string
 }

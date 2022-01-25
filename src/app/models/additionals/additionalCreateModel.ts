@@ -1,4 +1,4 @@
 export interface AdditionalCreateModel {
-    serviceName: string,
-    servicePrice: number
+    serviceName?: string,
+    servicePrice?: number
 }

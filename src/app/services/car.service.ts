@@ -22,7 +22,7 @@ export class CarService {
 
 
   update(car: CarUpdateModel): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + "update", car);
+    return this.httpClient.put<ResponseModel>(this.apiUrl + "update", car);
   }
  
   delete(id: number): Observable<ResponseModel> {

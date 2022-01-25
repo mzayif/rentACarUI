@@ -40,7 +40,7 @@ export class CarComponent implements OnInit {
 
     this.carService.getAll().subscribe(response => {
         this.dataLoaded = false
-        this.cars = response.data;
+        this.cars = response.data.sort((a, b) => a.id > b.id ? 1 : -1);
         this.dataLoaded = true;
     })
   }

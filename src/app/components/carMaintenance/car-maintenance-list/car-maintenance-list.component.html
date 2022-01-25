@@ -1,0 +1,64 @@
+<p-toast></p-toast>
+
+<div class="container mt-5">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <h3>Araç Bakım Yönetimi</h3>
+        </ng-template>
+
+        <ng-template *ngIf="selectCarId>0" pTemplate="right">
+            <button pButton pRipple label="Ekle" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
+        </ng-template>
+    </p-toolbar>
+    <p-table [value]="maintenances" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>Araç Markası</th>
+                <th>Araç Plakası Adı</th>
+                <th>Bakıma Gönderim Tarihi</th>
+                <th>Dönüş Tarihi</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-record>
+            <tr *ngIf="record.id != null && record.id >0">
+                <!-- <td>{{product.id}}</td> -->
+                <td>{{record.brandName}}</td>
+                <td>{{record.carPlate}}</td>
+                <td>{{record.sendMaintenanceDate}}</td>
+                <td>{{record.returnMaintenanceDate != null ? record.returnMaintenanceDate : 'Bakımda'}}</td>
+
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                        (click)="edit(record)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                        (click)="delete(record)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+
+<p-dialog [(visible)]="dialog" [style]="{width: '500px', height:'800px' }" header="Araç Bakım Detayı" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="field col-12 md:col-4">
+            <label for="float-input">Bakıma Gönderim Tarihi</label>
+            <p-calendar id="sendMaintenanceDate" [(ngModel)]="selectRecord.sendMaintenanceDate" dateFormat="yy-mm-dd" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <label for="icon">Bakımdan Dönüş Tarihi</label>
+            <p-calendar id="returnMaintenanceDate" [(ngModel)]="selectRecord.returnMaintenanceDate" dateFormat="yy-mm-dd" [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+    <!-- <app-car-maintenance-detail [carId]="selectCarId" [selectMaintenance]="selectRecord" (changeChilde)="hideDialog()"></app-car-maintenance-detail> -->
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

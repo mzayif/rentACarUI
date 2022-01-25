@@ -38,40 +38,14 @@ export class NaviComponent implements OnInit {
           },
           {
             label: 'Maintenance',
+            routerLink: "/car-maintenances"
             // icon:'pi pi-fw pi-plus',
-            items:[
-            {
-                label:'Send Maintenance',
-                // icon:'pi pi-fw pi-bookmark'
-            },
-            {
-                label:'Return Maintenance',
-                // icon:'pi pi-fw pi-video'
-            },
-            {
-                label:'Car Maintenance History',
-                // icon:'pi pi-fw pi-video'
-            },
-
-            ]
+            
           },
           {
             label: 'Damages',
-            // icon: 'pi pi-fw pi-plus',
-            items: [
-              {
-                label: 'New Damage',
-                routerLink: "/car/damage/add",
-                // icon: 'pi pi-fw pi-bookmark'
-              },
-              {
-                routerLink: "/car/damages",
-                label: 'Damage List',
-                // icon: 'pi pi-fw pi-video'
-              }
-            ]
+            routerLink: "/car/damages",
           },
-
         ]
       },
       {
@@ -137,7 +111,7 @@ export class NaviComponent implements OnInit {
         ]
       },
       {
-        label: 'Settings',
+        label: 'Tanımlar',
         // icon: 'pi pi-fw pi-calendar',
         items: [
           {
@@ -214,20 +188,21 @@ export class NaviComponent implements OnInit {
           },
           {
             label: 'Additional Services',
-            icon: 'pi pi-fw pi-pencil',
-            items: [
-              {
-                label: 'new',
-                routerLink:"/additional-service/add",
-                // icon: 'pi pi-fw pi-calendar-plus'
-              },
-              {
-                label: 'list',
-                routerLink:"/additional-services",
-                // icon: 'pi pi-fw pi-calendar-minus'
-              },
+            routerLink: "/additional-services",
+            //     icon: 'pi pi-fw pi-pencil',
+            // items: [
+            //   {
+            //     label: 'new',
+            //     routerLink:"/additional-service/add",
+            //     // icon: 'pi pi-fw pi-calendar-plus'
+            //   },
+            //   {
+            //     label: 'list',
+            //     routerLink:"/additional-services",
+            //     // icon: 'pi pi-fw pi-calendar-minus'
+            //   },
 
-            ]
+            // ]
           },
         ]
       },

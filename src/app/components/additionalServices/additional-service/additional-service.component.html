@@ -1,0 +1,50 @@
+<p-toast></p-toast>
+
+<div class="container mt-5">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <h3>Kiralanabilir Ek hizmetler Yönetimi</h3>
+        </ng-template>
+
+        <ng-template pTemplate="right">
+              <button pButton pRipple label="Ekle" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
+        </ng-template>
+    </p-toolbar>
+    <p-table [value]="additionalServices" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>Kiralanabilir Ek hizmet Adı</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <!-- <td>{{product.id}}</td> -->
+                <td>{{product.serviceName}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="edit(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete(product)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+
+<p-dialog [(visible)]="dialog" [style]="{width: '350px'}" header="Renk Detayı" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="name">Kiralanabilir Ek hizmetler Adı</label>
+            <input type="text" pInputText id="name" [(ngModel)]="selectRecord.serviceName" required autofocus />
+            <small class="p-invalid" *ngIf="submitted && !selectRecord.serviceName">Kiralanabilir Ek hizmetler Adı zorunludur</small>
+        </div>
+    </ng-template>
+    
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="İptal" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Kaydet" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
