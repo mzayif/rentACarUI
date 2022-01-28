@@ -14,20 +14,26 @@ export class CarDamageService {
   
   apiUrl: string = "http://localhost:8080/api/carDamages/";
   constructor(private httpClient: HttpClient) { }
+  
+  add(brand: CarDamageCreateModel): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', brand);
+  }
+  
+  update(brand: CarDamageUpdateModel): Observable<ResponseModel> {
+    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', brand);
+  }
+  
+  delete(id:number): Observable<ResponseModel> {
+    return this.httpClient.delete<ResponseModel>(this.apiUrl + 'delete' + `?id=${id}`);
+  }
+
+
 
   getAll(): Observable<ListResponseModel<CarDamageListModel>> {
     return this.httpClient.get<ListResponseModel<CarDamageListModel>>(this.apiUrl + 'getAll');
   }
 
-  add(brand: CarDamageCreateModel): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + 'add', brand);
-  }
-
-  update(brand: CarDamageUpdateModel): Observable<ResponseModel> {
-    return this.httpClient.put<ResponseModel>(this.apiUrl + 'update', brand);
-  }
-
-  delete(id:number): Observable<ResponseModel> {
-    return this.httpClient.delete<ResponseModel>(this.apiUrl + 'delete' + `?id=${id}`);
+  getAllByCarId(id: number): Observable<ListResponseModel<CarDamageListModel>> {
+    return this.httpClient.get<ListResponseModel<CarDamageListModel>>(this.apiUrl + 'getAllByCarId?id=' + id);
   }
 }

@@ -1,3 +1,4 @@
+import { CarDamagesComponent } from './components/car/car-damages/car-damages.component';
 import { AdditionalServiceComponent } from './components/additionalServices/additional-service/additional-service.component';
 import { CityComponent } from './components/city/city.component';
 import { RentalListComponent } from './components/rental/rental-list/rental-list.component';
@@ -27,15 +28,16 @@ import { InvoiceListComponent } from './components/invoice/invoice-list/invoice-
 import { CarMaintenanceListComponent } from './components/carMaintenance/car-maintenance-list/car-maintenance-list.component';
 
 const routes: Routes = [
-  { path: "car/damages", component: CarDamageListComponent },
+  { path: "car/damages", component: CarDamagesComponent },
+  { path: "car/damages/:id", component: CarDamagesComponent },
   { path: "car/rental/add/:id", component: RentalAddComponent },
-  { path: 'car/rental/:id', component: RentalDetailComponent },
+  { path: 'car/rental/:id', component: RentalAddComponent },
   { path: "car/rentals", component: RentalListComponent },
+  { path: "car/maintenances", component: CarMaintenanceListComponent },
+  { path: "car/maintenances/:id", component: CarMaintenanceListComponent },
   { path: 'car/add', component: CarAddComponent },
   { path: 'car/:carId', component: CarDteailComponent },
   { path: "car", component: CarComponent },
-  { path: "car-maintenances", component: CarMaintenanceListComponent },
-  { path: "car-maintenances/:id", component: CarMaintenanceListComponent },
   { path: 'brand/add', component: BrandAddComponent },
   { path: 'brand/:id', component: BrandDetailComponent },
   { path: "brands", component: BrandListComponent },

@@ -14,6 +14,7 @@ export class CarDteailComponent implements OnInit {
   carId: any
 
   dialog: boolean = false;
+  rentalDialog: boolean = false;
   dataLoaded: boolean = false;
 
   constructor(private carService: CarService,
@@ -48,15 +49,23 @@ export class CarDteailComponent implements OnInit {
     // this.submitted = false;
   }
 
+  rent(){
+    this.rentalDialog = true;
+  }
+
   hideDialog(){
     this.dialog = false;
     this.getCarsById();
   }
 
+  hideRentalDialog(){    
+    this.rentalDialog = false;
+  }
+
   delete(){
     debugger;
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + this.car.description + '?',
+      message: this.car.carPlate + ' plakalı aracı silmek istediğinizden eminmisiniz?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {

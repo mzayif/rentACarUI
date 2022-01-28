@@ -1,4 +1,4 @@
 export interface CarDamageCreateModel {
-    description: string,
-    carId: number
+    description?: string,
+    carId?: number
 }

@@ -38,7 +38,7 @@ export class NaviComponent implements OnInit {
           },
           {
             label: 'Maintenance',
-            routerLink: "/car-maintenances"
+            routerLink: "/car/maintenances"
             // icon:'pi pi-fw pi-plus',
             
           },
@@ -117,74 +117,18 @@ export class NaviComponent implements OnInit {
           {
             routerLink: "/brands",
             label: 'Brands',
-            // icon: 'pi pi-fw pi-pencil',
-            // items: [
-            //   {
-            //     label: 'new',
-            //     routerLink:"/brand/add",
-            //     // icon: 'pi pi-fw pi-calendar-plus'
-            //   },
-            //   {
-            //     label: 'list',
-            //     routerLink:"/brands",
-            //     // icon: 'pi pi-fw pi-calendar-minus'
-            //   },
-
-            // ]
           },
           {
             label: 'Colors',
             routerLink: "/colors",
-            // icon: 'pi pi-fw pi-pencil',
-            // items: [
-            //   {
-            //     label: 'new',
-            //     routerLink: "/color/add",
-            //     // icon: 'pi pi-fw pi-calendar-plus'
-            //   },
-            //   {
-            //     label: 'list',
-            //     routerLink: "/colors",
-            //     // icon: 'pi pi-fw pi-calendar-minus'
-            //   },
-
-            // ]
           },
           {
             label: 'Car Segments',
             routerLink: "/car-segments",
-            //     icon: 'pi pi-fw pi-pencil',
-            // items: [
-            //   {
-            //     label: 'new',
-            //     routerLink:"/car-segment/add",
-            //     // icon: 'pi pi-fw pi-calendar-plus'
-            //   },
-            //   {
-            //     label: 'list',
-            //     routerLink:"/car-segments",
-            //     // icon: 'pi pi-fw pi-calendar-minus'
-            //   },
-
-            // ]
           }, 
           {
             label: 'Cities',
             routerLink: "/cities",
-            //     icon: 'pi pi-fw pi-pencil',
-            // items: [
-            //   {
-            //     label: 'new',
-            //     routerLink:"/city/add",
-            //     // icon: 'pi pi-fw pi-calendar-plus'
-            //   },
-            //   {
-            //     label: 'list',
-            //     routerLink:"/cities",
-            //     // icon: 'pi pi-fw pi-calendar-minus'
-            //   },
-
-            // ]
           },
           {
             label: 'Additional Services',

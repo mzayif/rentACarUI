@@ -1,1 +1,85 @@
-<p>rental-add works!</p>
+<p-toast></p-toast>
+
+<div class="container mt-5">
+    <div class="card pb-5">
+        <div *ngIf="carId==0" class="card-header">
+            <h5 class="title">Araç ekle</h5>
+        </div>
+        <div class="card-body">               
+
+            <form [formGroup]="rentalAddForm">
+                <!-- <div class="mb-3">
+                    <label for="modelYear">Model Yılı</label>
+                    <div class="form-group">
+                        <input type="number" 
+                        id="modelYear" 
+                        formControlName="modelYear" class="form-control" 
+                        placeholder="Araç Model Yılı"/>
+                    </div>
+                </div> -->
+                <!-- <span class="p-float-label">
+                    <input id="float-input-invalid" type="number" pInputText id="modelYear" formControlName="modelYear" class="ng-invalid ng-dirty"> 
+                    <label for="float-input-invalid">Model Yılı</label>
+                </span> -->
+                <div class="p-fluid mb-4">
+                    <!-- <label for="brandId">Marka</label> -->
+                    <p-dropdown [options]="availableCars" id="carId" formControlName="carId" placeholder="Kiralanabilir Araç"
+                        optionLabel="description" optionValue="id" [showClear]="true">
+                    </p-dropdown>
+                </div>
+                
+                <div class="p-fluid mb-4">
+                    <label for="rentDate">Kiralama Başlangıç Tarihi</label>
+                    <p-calendar id="rentDate" formControlName="rentDate" [showIcon]="true" inputId="icon"></p-calendar>
+                </div>
+
+                <div class="p-fluid mb-4">
+                    <label for="returnDate">Kiralama Dönüş Tarihi</label>
+                    <p-calendar id="returnDate" formControlName="returnDate" [showIcon]="true" inputId="icon"></p-calendar>
+                </div>
+
+                <div class="p-fluid mb-4">
+                    <!-- <label for="brandId">Marka</label> -->
+                    <p-dropdown [options]="customers" id="customerId" formControlName="customerId" placeholder="Kiralayan Müşteri"
+                        optionLabel="customerName" optionValue="id" [showClear]="true">
+                    </p-dropdown>
+                </div>
+                <!-- <div class="p-fluid mb-4">
+                    <span class="p-float-label">
+                        <input id="float-input" type="number" pInputText pInputText id="customerId" formControlName="customerId">
+                        <label for="float-input">Kiralayan Müşteri</label>
+                    </span>
+                </div> -->
+
+                <div class="p-fluid mb-4">
+                    <span class="p-float-label">
+                        <input id="float-input" type="number" pInputText pInputText id="rentedKilometer" formControlName="rentedKilometer">
+                        <label for="float-input">Aracın Kilometresi</label>
+                    </span>
+                </div>
+
+                <div class="p-fluid mb-4">
+                    <!-- <label for="brandId">Marka</label> -->
+                    <p-dropdown [options]="cities" id="picUpCityId" formControlName="picUpCityId" placeholder="Aracın Alınacağı Şehir"
+                        optionLabel="name" optionValue="id" [showClear]="true">
+                    </p-dropdown>
+                </div>
+                
+                <div class="p-fluid mb-4">
+                    <!-- <label for="brandId">Marka</label> -->
+                    <p-dropdown [options]="cities" id="returnCityId" formControlName="returnCityId" placeholder="Aracın Teslim Edileceği Şehir"
+                        optionLabel="name" optionValue="id" [showClear]="true">
+                    </p-dropdown>
+                </div>
+                
+
+            </form>
+        </div>
+        <div class="text-center">
+            <p-button label="Ekle" (click)="save()"></p-button>
+        </div>
+    </div>
+</div>
+
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

@@ -37,6 +37,10 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { StepsModule } from 'primeng/steps';
+
+
+
 
 import { BrandService } from './services/brand.service';
 import { CarService } from './services/car.service';
@@ -52,9 +56,6 @@ import { CarAddComponent } from './components/car/car-add/car-add.component';
 import { CarSegmentComponent } from './components/carSegment/car-segment/car-segment.component';
 import { CarSegmentAddComponent } from './components/carSegment/car-segment-add/car-segment-add.component';
 import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
-import { CarDamageAddComponent } from './components/carDamage/car-damage-add/car-damage-add.component';
-import { CarDamageDetailComponent } from './components/carDamage/car-damage-detail/car-damage-detail.component';
-import { CarDamageListComponent } from './components/carDamage/car-damage-list/car-damage-list.component';
 import { BrandDetailComponent } from './components/brand/brand-detail/brand-detail.component';
 import { CreditCardAddComponent } from './components/CreditCard/credit-card-add/credit-card-add.component';
 import { CreditCardDetailComponent } from './components/CreditCard/credit-card-detail/credit-card-detail.component';
@@ -72,6 +73,8 @@ import { CityComponent } from './components/city/city.component';
 import { AdditionalServiceComponent } from './components/additionalServices/additional-service/additional-service.component';
 import { CarMaintenanceDetailComponent } from './components/carMaintenance/car-maintenance-detail/car-maintenance-detail.component';
 import { CarMaintenanceListComponent } from './components/carMaintenance/car-maintenance-list/car-maintenance-list.component';
+import { CarDamagesComponent } from './components/car/car-damages/car-damages.component';
+import { RentalStepsComponent } from './components/rental/rental-steps/rental-steps.component';
 
 
 
@@ -89,9 +92,6 @@ import { CarMaintenanceListComponent } from './components/carMaintenance/car-mai
     CarSegmentComponent,
     CarSegmentAddComponent,
     BrandListComponent,
-    CarDamageAddComponent,
-    CarDamageDetailComponent,
-    CarDamageListComponent,
     CreditCardAddComponent,
     CreditCardDetailComponent,
     CreditCardListComponent,
@@ -107,7 +107,9 @@ import { CarMaintenanceListComponent } from './components/carMaintenance/car-mai
     CityComponent,
     AdditionalServiceComponent,
     CarMaintenanceDetailComponent,
-    CarMaintenanceListComponent
+    CarMaintenanceListComponent,
+    CarDamagesComponent,
+    RentalStepsComponent
   ],
   imports: [
     BrowserModule,
@@ -138,7 +140,8 @@ import { CarMaintenanceListComponent } from './components/carMaintenance/car-mai
     RadioButtonModule,
     InputNumberModule,
     InputTextareaModule,
-
+    StepsModule,
+    
     DialogModule,
     RippleModule,
     MenubarModule,

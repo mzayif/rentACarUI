@@ -1,5 +1,5 @@
 export interface CarDamageUpdateModel {
     id: number,
-    carId: number,
-    description: string
+    carId?: number,
+    description?: string
 }

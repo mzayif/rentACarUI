@@ -40,7 +40,14 @@
             <a style="text-decoration: none" [routerLink]="['/car', car.id]"
               ><p-button
                 icon="pi pi-shopping-cart"
-                label="Rental"
+                label="Araç Detayı"
+                [disabled]="car.inventoryStatus === 'OUTOFSTOCK'"
+              ></p-button
+            ></a>
+            <a style="text-decoration: none" [routerLink]="['/car/rental/add/',car.id]"
+              ><p-button
+                icon="pi pi-shopping-cart"
+                label="Kirala"
                 [disabled]="car.inventoryStatus === 'OUTOFSTOCK'"
               ></p-button
             ></a>

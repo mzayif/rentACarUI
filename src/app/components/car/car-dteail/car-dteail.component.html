@@ -8,10 +8,9 @@
       </ng-template>
 
       <ng-template pTemplate="right">
-        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success pr-4"
-          (click)="edit()"></button>
-        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-          (click)="delete()"></button>
+        <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button pr-4" [routerLink]="['/car']"></button>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success pr-4" (click)="edit()"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="delete()"></button>
       </ng-template>
     </p-toolbar>
     <div class="wrapper row">
@@ -93,16 +92,13 @@
         </h4>
         <div class="row mt-5 pt-5">
           <div class="col-3">
-            <a style="text-decoration: none" [routerLink]="['/car/rental/add/', car.id]">
-              <p-button label="Kirala"></p-button>
-            </a>
-
+            <button pButton icon="pi pi-pencil" label="Kirala" class="p-button p-button pr-4" [routerLink]="['/car/rental/add/', car.id]"></button>
           </div>
           <div class="col-5 ">
-            <p-button label="Bakım Geçmişi" [routerLink]="['/car-maintenances/', car.id]"></p-button>
+            <p-button label="Bakım Geçmişi" [routerLink]="['/car/maintenances/', car.id]"></p-button>
           </div>
           <div class="col-4">
-            <p-button label="Hasar Girişi"></p-button>
+            <p-button label="Hasar Geçmişi" [routerLink]="['/car/damages/', car.id]"></p-button>
           </div>
         </div>
       </div>
@@ -113,6 +109,11 @@
 
 <p-dialog [(visible)]="dialog" [style]="{width: '550px'}" header="Araç Tanım Detayı" [modal]="true" styleClass="p-fluid">
   <app-car-add [carId]="car.id" (changeCar)="hideDialog()"></app-car-add>
+</p-dialog>
+
+
+<p-dialog [(visible)]="rentalDialog" [style]="{width: '550px'}" header="Yeni Kiralama" [modal]="true" styleClass="p-fluid">
+  <app-rental-add [carId]="car.id" (changeCar)="hideRentalDialog()"></app-rental-add>
 </p-dialog>
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

@@ -37,8 +37,12 @@ export class CarService {
 
   getCarsPage(pageNo: number, pageSize: number): Observable<ListResponseModel<CarListModel>> {
     return this.httpClient.get<ListResponseModel<CarListModel>>(
-      this.apiUrl + "/getAllByPage?pageNo=" + pageNo + "&pageSize=" + pageSize
+      this.apiUrl + "getAllByPage?pageNo=" + pageNo + "&pageSize=" + pageSize
     )
+  }
+
+  getAvailableCarForRent(): Observable<ListResponseModel<CarListModel>> {
+    return this.httpClient.get<ListResponseModel<CarListModel>>(this.apiUrl + "getAvailableCarForRent")
   }
 
   getCarsById(carId: number): Observable<SingelResponseModel<CarViewModel>> {
@@ -46,5 +50,6 @@ export class CarService {
       this.apiUrl + `?id=${carId}`
     );
   }
+  
 }
 
